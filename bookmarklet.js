@@ -626,7 +626,7 @@ window.CCH || (CCH = function(){
 
   this.us = new UnitedStates();
   this.ghAuthKey = window.ghAuthKey;
-  this.scriptUrl = "http://theunitedstates.io/contact-congress/bookmarklet.js";
+  this.scriptUrl = "https://contact-congress.s3.amazonaws.com/bookmarklet.js";
   this.chooseVsCheckThreshold = 4;
   this.legislator = null;
   this.startPage = null;
@@ -765,7 +765,7 @@ CCH.prototype.currentSteps = function() {
 };
 
 CCH.prototype.resetSteps = function() {
-  if (prompt('Are you sure you want to start over?')) {
+  if (confirm('Are you sure you want to start over?')) {
     var dest = this.steps[0].visit || location.href;
     this.steps = null;
     this.topWindow().location.href = dest;
@@ -857,7 +857,7 @@ CCH.prototype.finalizeStep = function(e) {
       toSelect = this.currentFields().filter('select'),
       radios = this.currentFields().filter('[type="radio"]'),
       toChoose = radios.map(_.bind(function(i, el){
-        if (this.currentFields().filter('[name="' + el.attr(name) + '"]').length === 1) {
+        if (this.currentFields().filter('[name="' + $(el).attr(name) + '"]').length === 1) {
           // unique elements are many-choice radios, as they
           // were filtered out previously
           return el;
