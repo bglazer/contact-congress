@@ -626,7 +626,7 @@ window.CCH || (CCH = function(){
 
   this.us = new UnitedStates();
   this.ghAuthKey = window.ghAuthKey;
-  this.scriptUrl = "https://localhost:8001/cch.js";
+  this.scriptUrl = "http://theunitedstates.io/contact-congress/bookmarklet.js";
   this.chooseVsCheckThreshold = 4;
   this.legislator = null;
   this.startPage = null;
