@@ -656,7 +656,7 @@ CCH.prototype.initialize = function() {
   // Github oauth key
   $.ajaxSetup({
     beforeSend: function(xhr) {
-      xhr.setRequestHeader("Authorization", "Basic " + this.ghAuthKey);
+      xhr.setRequestHeader("Authorization", "Basic " + self.ghAuthKey);
     }
   });
 
